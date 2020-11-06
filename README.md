@@ -15,32 +15,9 @@
 
         obj supply();
 
-example:
-
-        public class Main {
-            public static void main(String[] args) {
-                List<String> list = List.of("a", "b", "c");
-                Consumer<String> print = item -> System.out.println(item + "");
-                Consumer<String> printUppercase = item -> System.out.println(item.toUpperCase() + "");
-                Consumer<String> printLowercase = item -> System.out.println(item.toLowerCase() + "");
-
-                list.forEach(print.andThen(printUppercase).andThen(printLowercase));
-            }
-        }
-
 * **Function**: map a value to a different value.
 
         obj map(obj);
-
-example:
-
-        public class Main {
-            public static void main(String[] args) {
-                Supplier<Double> getRandom = () -> Math.random();
-                double random = getRandom.get(); //Lazy evaluation
-                System.out.println(random);
-            }
-        }
 
 * **Predicate**: check that an object satifies some criteria. (to filter data)
 
@@ -63,7 +40,13 @@ example:
 
 * **Supplier**
 
-
+        public class Main {
+            public static void main(String[] args) {
+                Supplier<Double> getRandom = () -> Math.random();
+                double random = getRandom.get(); //Lazy evaluation
+                System.out.println(random);
+            }
+        }
 
 * **Function**
 
