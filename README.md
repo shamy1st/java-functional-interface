@@ -27,32 +27,26 @@
 
 * **Consumer**
 
-        public class Main {
-            public static void main(String[] args) {
-                List<String> list = List.of("a", "b", "c");
-                Consumer<String> print = item -> System.out.println(item + "");
-                Consumer<String> printUppercase = item -> System.out.println(item.toUpperCase() + "");
-                Consumer<String> printLowercase = item -> System.out.println(item.toLowerCase() + "");
-
-                list.forEach(print.andThen(printUppercase).andThen(printLowercase));
-            }
-        }
+        List<String> list = List.of("a", "b", "c");
+        Consumer<String> print = item -> System.out.println(item + "");
+        Consumer<String> printUppercase = item -> System.out.println(item.toUpperCase() + "");
+        Consumer<String> printLowercase = item -> System.out.println(item.toLowerCase() + "");
+        list.forEach(print.andThen(printUppercase).andThen(printLowercase));
 
 * **Supplier**
 
-        public class Main {
-            public static void main(String[] args) {
-                Supplier<Double> getRandom = () -> Math.random();
-                double random = getRandom.get(); //Lazy evaluation
-                System.out.println(random);
-            }
-        }
+        Supplier<Double> getRandom = () -> Math.random();
+        double random = getRandom.get(); //Lazy evaluation
+        System.out.println(random);
 
 * **Function**
 
-
+        Function<String, Integer> map = str -> str.length();
+        Integer length = map.apply("Hello");
+        System.out.println(length);
 
 * **Predicate**
 
-
+        Predicate<String> isLongerThan5 = str -> str.length() > 5;
+        boolean result = isLongerThan5.test("Hello"); //false
 
