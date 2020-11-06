@@ -50,3 +50,15 @@
         Predicate<String> isLongerThan5 = str -> str.length() > 5;
         boolean result = isLongerThan5.test("Hello"); //false
 
+---
+
+* **BinaryOperator** special type of **Function** extends BiFunction<T,T,T>
+
+        BinaryOperator<Integer> add = (a,b) -> a+b;
+        Integer result = add.apply(5,6) //11
+
+* **UnaryOperator** special type of **Function** extends Function<T,T>
+
+        UnaryOperator<Integer> square = n -> n*n;
+        Integer result = square.apply(5); //25
+
