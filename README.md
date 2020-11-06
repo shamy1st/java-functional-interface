@@ -5,7 +5,7 @@
             void print(String message);
         }
 
-### Built-In Functional Interfaces
+### [Built-In Functional Interfaces](https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html)
 
 * **Consumer**: single argument with no result. (consumes a value)
 
